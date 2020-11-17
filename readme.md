@@ -4,14 +4,17 @@
   <a><img src="https://img.shields.io/badge/State-Unfinished-red.svg" alt="Unfinished"></a>
 </p>
 
-An open source cheat for Counter-Strike: Global Offensive on linux.
+A python script that automatically changes your discord status every x seconds
+
+## How to get your token
+This video showcases [how to get your token](https://www.youtube.com/watch?v=YEgFvgg7ZPI)
 
 ## How to use
 ```
 git clone https://github.com/seksea/auto-status
 cd auto-status
 pip install -r requirements.txt
-python3 auto-status.py <token>
+python3 auto-status.py <token> <other args>
 ```
 
 ## Found a bug/want to add something?
