@@ -23,7 +23,7 @@ python3 auto-status.py <token> <other args>
 | Arg       | Description                            |
 | --------- | -------------------------------------- |
 | -d <time> | Delay between status change (sec)      |
-| -g        | Have a custom game activity            |
+| -g <days> | Have a custom game activity            |
 | -s        | Have a custom rickroll stream activity |
 | -c <comp> | Have a custom 'competing in' activity  |
 
