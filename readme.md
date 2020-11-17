@@ -20,11 +20,15 @@ python3 auto-status.py <token> <other args>
 
 ## Args
 
-| Arg | Description                          |
-| --- | ------------------------------------ |
-| -t  | Time between status change (sec)     |
+| Arg       | Description                            |
+| --------- | -------------------------------------- |
+| -d <time> | Delay between status change (sec)      |
+| -g        | Have a custom game activity            |
+| -s        | Have a custom rickroll stream activity |
+| -c <comp> | Have a custom 'competing in' activity  |
 
 
 ## Found a bug/want to add something?
 - [Create a pull request](https://github.com/seksea/auto-status/issues/new) ([tutorial](https://github.com/yangsu/pull-request-tutorial))
 - [Report a bug](https://github.com/seksea/auto-status/issues/new)
+
