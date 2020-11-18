@@ -2,6 +2,7 @@
   <a><img src="https://img.shields.io/badge/Discord-gray.svg" alt="Discord"></a>
   <a><img src="https://img.shields.io/badge/Language-Python3.7+-blue.svg" alt="Python3.7"></a>
   <a><img src="https://img.shields.io/badge/State-Unfinished-red.svg" alt="Unfinished"></a>
+  <p align="center"><img src="2020-11-18-153742_212x201_scrot.png"></p>
 </p>
 
 A python script that automatically changes your discord status every x seconds
