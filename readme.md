@@ -26,7 +26,7 @@ python3 auto-status.py <token> <other args>
 | -g \<days\> | Have a custom game activity            |
 | -s          | Have a custom rickroll stream activity |
 | -c \<comp\> | Have a custom 'competing in' activity  |
-| -w          | Have a custom 'watching' activity      |
+| -w \<film>  | Have a custom 'watching' activity      |
 | -r          | Pick randomly                          |
 
 
