@@ -27,7 +27,7 @@ async def statusTask():
     while True:
         for i in statuses:
             if args.game != 0:
-                await dClient.change_presence(activity=discord.Game(name=i[:-1], start=datetime.now()-datetime.timedelta(args.game), end=datetime.noe()))
+                await dClient.change_presence(activity=discord.Game(name=i[:-1], start=datetime.datetime.now()-datetime.timedelta(args.game), end=datetime.datetime.now()))
             elif args.streaming:
                 await dClient.change_presence(activity=discord.Streaming(name=i[:-1], platform="YouTube", url="https://www.youtube.com/watch?v=DLzxrzFCyOs"))
             elif args.competing != "":
