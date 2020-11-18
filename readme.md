@@ -20,12 +20,14 @@ python3 auto-status.py <token> <other args>
 
 ## Args
 
-| Arg       | Description                            |
-| --------- | -------------------------------------- |
+| Arg         | Description                            |
+| ----------- | -------------------------------------- |
 | -d \<time\> | Delay between status change (sec)      |
 | -g \<days\> | Have a custom game activity            |
-| -s        | Have a custom rickroll stream activity |
+| -s          | Have a custom rickroll stream activity |
 | -c \<comp\> | Have a custom 'competing in' activity  |
+| -w          | Have a custom 'watching' activity      |
+| -r          | Pick randomly                          |
 
 
 ## Found a bug/want to add something?
