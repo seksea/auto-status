@@ -5,6 +5,8 @@
   <p align="center"><img src="2020-11-18-153742_212x201_scrot.png"></p>
 </p>
 
+:warning: Although the risk is low, using a selfbot in discord is against the terms of service and your account *could* be banned, although its highly unlikely from past experience :warning:
+
 A python script that automatically changes your discord status every x seconds
 
 ## How to get your token
