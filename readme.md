@@ -17,21 +17,9 @@ This video showcases [how to get your token](https://www.youtube.com/watch?v=YEg
 git clone https://github.com/seksea/auto-status
 cd auto-status
 pip install -r requirements.txt
-vim statuses.txt # Use any text editor
-python3 auto-status.py <token> <other args>
+vim config.json # Use any text editor and edit to your liking
+python3 auto-status.py
 ```
-
-## Args
-
-| Arg         | Description                            |
-| ----------- | -------------------------------------- |
-| -d \<time\> | Delay between status change (sec)      |
-| -g \<days\> | Have a custom game activity            |
-| -s          | Have a custom rickroll stream activity |
-| -c \<comp\> | Have a custom 'competing in' activity  |
-| -w \<film>  | Have a custom 'watching' activity      |
-| -r          | Pick randomly                          |
-
 
 ## Found a bug/want to add something?
 - [Create a pull request](https://github.com/seksea/auto-status/issues/new) ([tutorial](https://github.com/yangsu/pull-request-tutorial))

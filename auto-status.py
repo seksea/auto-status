@@ -1,51 +1,31 @@
 import discord
-import argparse
-import asyncio
+import json
 import datetime
-import random
+import asyncio
 
-# Parse args
-parser = argparse.ArgumentParser()
-parser.add_argument("token")
-parser.add_argument("-d", "--delay", help="Time between status change (sec)", type=int, default=10)
-parser.add_argument("-g", "--game", help="Have a custom game activity", type=int, default=0)
-parser.add_argument("-s", "--streaming", action="store_true", help="Have a custom rickroll stream activity")
-parser.add_argument("-c", "--competing", help="Have a custom 'competing in' activity", default="")
-parser.add_argument("-w", "--watching", help="Have a custom 'watching' activity", default="")
-parser.add_argument("-r", "--random", action="store_true", help="Pick a random status", default="")
-args = parser.parse_args()
-
-# Create discord client
 dClient = discord.Client()
 
+# Load config
+config = {}
+with open("config.json", "r") as f:
+    config = json.loads(f.read())
+
 async def statusTask():
-    # Get statuses from file
-    with open("statuses.txt", "r") as f:
-        activities = f.readlines()
-
-    print(f"Using activities {activities}")
-    print(f"Using delay {args.delay}")
-
-    # Loop forever and set status
     while True:
-        for activity in activities:
-            if args.random:
-                activity = random.choice(activities)
-            if activity.endswith("\n"):
-                activity = activity[:-1]
-            if args.game != 0:
-                await dClient.change_presence(activity=discord.Game(name=activity, start=datetime.datetime.now()-datetime.timedelta(args.game), end=datetime.datetime.now()))
-            elif args.streaming:
-                await dClient.change_presence(activity=discord.Streaming(name=activity, platform="YouTube", url="https://www.youtube.com/watch?v=DLzxrzFCyOs"))
-            elif args.competing != "":
-                await dClient.change_presence(activity=discord.Activity(name=args.competing, type=5, details=activity))
-            elif args.watching != "":
-                await dClient.change_presence(activity=discord.Activity(name=activity, type=3, details=args.watching))
-            await asyncio.sleep(args.delay)
+        for status in config["statuses"]:
+            if status["type"] == "game":
+                await dClient.change_presence(activity=discord.Game(name=status["name"], start=datetime.datetime.now()-datetime.timedelta(status["duration"]), end=datetime.datetime.now()))
+            if status["type"] == "stream":
+                await dClient.change_presence(activity=discord.Streaming(name=status["name"], platform="YouTube", url=status["url"]))
+            if status["type"] == "competing":
+                await dClient.change_presence(activity=discord.Activity(name=status["name"], type=5, details=status["description"]))
+            if status["type"] == "watching":
+                await dClient.change_presence(activity=discord.Activity(name=status["name"], type=3, details=status["description"]))
+            await asyncio.sleep(status["delay"])
 
 @dClient.event
 async def on_ready():
-    print(f"logged in as {dClient.user}!")
+    print(f"logged in as {dClient.user} and changing status!")
     dClient.loop.create_task(statusTask())
 
-dClient.run(args.token, bot=False)
+dClient.run(config["config"]["token"], bot=False)

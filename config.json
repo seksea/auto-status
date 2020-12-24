@@ -1,0 +1,32 @@
+{ 
+    "config" : {
+        "token" : "putyourtokenhere"
+    },
+
+	"statuses" : [
+        {
+            "type" : "game",
+            "name" : "Garfield Kart",
+            "duration" : 4345,
+            "delay" : 5
+        },
+        {
+            "type" : "stream",
+            "name" : "Rickroll status",
+            "url" : "https://www.youtube.com/watch?v=DLzxrzFCyOs",
+            "delay" : 5
+        },
+        {
+            "type" : "competing",
+            "name" : "test competition",
+            "description" : "description",
+            "delay" : 5
+        },
+        {
+            "type" : "watching",
+            "name" : "test show",
+            "description" : "description",
+            "delay" : 5
+        }
+    ]
+}
