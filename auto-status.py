@@ -21,6 +21,8 @@ async def statusTask():
                 await dClient.change_presence(activity=discord.Activity(name=status["name"], type=5, details=status["description"]))
             if status["type"] == "watching":
                 await dClient.change_presence(activity=discord.Activity(name=status["name"], type=3, details=status["description"]))
+            if status["type"] == "listening":
+                await dClient.change_presence(activity=discord.Activity(name=status["name"], type=2))
             await asyncio.sleep(status["delay"])
 
 @dClient.event
